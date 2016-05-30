@@ -8,7 +8,6 @@ public class Sumator {
     Integer i1= Integer.valueOf(firstnumber);
     Integer i2=Integer.valueOf(secondnumber);
     Integer sum=i1+i2;
-
     return sum.toString();
   }
 

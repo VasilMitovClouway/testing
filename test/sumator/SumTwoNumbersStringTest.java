@@ -15,14 +15,26 @@ public class SumTwoNumbersStringTest {
     assertEquals("3", sumator.sum("1", "2"));
   }
 
-  @Test(expected = NumberFormatException.class)
-  public void firstPassedValueIsNotANumber() {
+  @Test
+  public void summingStringsNegativeWithPositive() throws Exception {
     Sumator sumator = new Sumator();
-    sumator.sum("1a2", "12");
+    assertEquals("2", sumator.sum("-1", "3"));
+  }
+
+  @Test
+  public void summingStringsNegativeWithNegative() throws Exception {
+    Sumator sumator = new Sumator();
+    assertEquals("-4", sumator.sum("-1", "-3"));
+  }
+
+  @Test(expected = NumberFormatException.class)
+  public void onePassedValueIsNotANumber() {
+    Sumator sumator = new Sumator();
+    sumator.sum("1a1", "12");
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void firstPassedValueIsEmpty() {
+  public void onePassedValueIsEmpty() {
     Sumator sumator = new Sumator();
     sumator.sum("", "1");
   }
